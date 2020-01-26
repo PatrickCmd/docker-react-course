@@ -1,7 +1,7 @@
 # Multi-step Builds
 FROM node:alpine as builder
 WORKDIR /app
-COPY package.json .
+COPY package*.json ./
 RUN yarn install
 COPY . .
 RUN yarn run build
