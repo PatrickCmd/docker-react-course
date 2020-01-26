@@ -17,4 +17,5 @@ RUN yarn run build
 # docker build -t client .
 # docker run -p 8080:80 client ====> Port 80 is the default port used by nginx to server http requests.
 FROM nginx:1.17.8-alpine
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html

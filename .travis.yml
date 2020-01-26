@@ -7,3 +7,23 @@ before_install:
 
 script:
     - docker run -e CI=true patrickcmd/docker-react-course yarn run test -- --coverage
+
+# deploy to AWS Elastic Beanstalk
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-react"
+    env: "DockerReact-env"
+    bucket_name: "elasticbeanstalk-us-east-2-470656852239"   # s3 bucket name
+    bucket_path: "docker-react"
+    on:
+        branch: master  # every time code is pushed or merged to the master branch
+    access_key_id: $AWS_ACCESS_KEY   # AWS Access key for IAM user for the project
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"    # AWS secret key for IAM user for the project
+
+# access_key_id: $AWS_ACCESS_KEY
+# secret_access_key: $AWS_SECRET_KEY
+# IAM: Service used for managing api keys.
+# AKIAW3FKVUEHYU5ETVTX
+# KeOmw2lHjifPiu7WsZaBufWNxOCFJtkqQNMe05Ud

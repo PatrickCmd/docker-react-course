@@ -23,9 +23,19 @@ Additionally, you may want to set the following property if your travis build fa
 language: generic 
 ```
 
+## AWS
+- AWS [Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
 
-
-
+### Video Tutorials
+- YouTube: [Run a Docker Container from the Docker Registry](https://www.youtube.com/watch?v=lBu7Ov3Rt-M&feature=youtu.be)
+- YouTube: [Use Private Docker Repositories](https://www.youtube.com/watch?v=pLw6MLqwmew&feature=youtu.be)
+### Sample Apps
+- GitHub: [PHP and Amazon RDS](https://github.com/awslabs/eb-demo-php-simple-app/tree/docker-apache)
+- GitHub: [Python, DynamoDB, and SNS](https://github.com/awslabs/eb-py-flask-signup/tree/docker)
+### Documentation
+- [Deploying Docker with AWS Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker.html)
+- [AWS Elastic Beanstalk overview](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/)
+- [AWS Elastic Beanstalk concepts](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/index.html?concepts.html)
 
 
 
