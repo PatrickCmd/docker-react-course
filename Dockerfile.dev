@@ -1,0 +1,18 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json .
+RUN yarn install
+
+COPY . .
+
+CMD ["yarn", "run", "start"]
+
+# docker run -t -i -p 3000:3000 e46be49fbdf
+
+# docker run -t -i -p 3000:3000 -v $(pwd):/app e46be49fbdf3  ==> Map the pwd into the '/app' folder
+# docker run -t -i -p 3000:3000 -v /app/node_modules -v $(pwd):/app bd3ee5e3c6d9 ==> Put a bookmark on the node_modules folder
+# docker run -it client yarn test ====> Run tests -i -t same as -it for full interactivity
+# docker exec -it <container-id> yarn test ===> with docker-compose OR
+# docker-compose exec <service-name> yarn test
