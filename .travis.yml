@@ -8,13 +8,13 @@ before_install:
 script:
     - docker run -e CI=true patrickcmd/docker-react-course yarn run test -- --coverage
 
-# deploy to AWS Elastic Beanstalk
+# deploy to AWS Elastic Beanstalk with single docker image
 deploy:
     provider: elasticbeanstalk
     region: "us-east-2"
     app: "docker-react"
     env: "DockerReact-env"
-    bucket_name: "elasticbeanstalk-us-east-2-470656852239"   # s3 bucket name
+    bucket_name: "elasticbeanstalk-us-east-2-470656852239"   # s3 bucket name from s3 storage services
     bucket_path: "docker-react"
     on:
         branch: master  # every time code is pushed or merged to the master branch
